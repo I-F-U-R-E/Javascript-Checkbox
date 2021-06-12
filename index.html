@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <title>JavaScript checkbox</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <div class="inbox">
+        <div class="item">
+            <input type="checkbox">
+            <p>To do list</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Do the laundry</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Wash the dishes</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Throw the trash</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Oh pls, you ain't done</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Practice Javascript</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Eat eat eat</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Sleep</p>
+        </div> 
+        <div class="item">
+            <input type="checkbox">
+            <p>Visit Treasure</p>
+        </div>
+    </div>
+
+  <script>
+
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+ let lastChecked;
+
+
+ 
+ function handleCheck(e) {
+
+  let inBetween = false;
+
+  if (e.shiftKey && this.checked) {
+    checkboxes.forEach(checkbox => {
+      console.log(checkbox);
+      if (checkbox === this || checkbox === lastChecked) {
+        inBetween = !inBetween;
+        console.log('Starting to check them in between!');
+      }
+
+      if (inBetween) {
+          checkbox.checked = true;
+      }
+    })
+  }
+    lastChecked = this;
+}
+    
+checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+  </script>
+</body>
+</html>

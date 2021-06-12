@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Viaoda Libre', cursive;
+    background-color: rgba(41, 12, 209, 0.808);
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.inbox{
+    max-width: 400px;
+    margin: 10px auto;
+    background-color: #fff;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.192);
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #F1F1F1;
+}
+
+input {
+    margin: 20px;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}
+
+input:checked + p {
+background: #f9f9f9c5;
+text-decoration: line-through;
+}
+
+p {
+margin: 0;
+padding: 15px;
+transition: background 0.2s;
+flex: 1;
+border-left: 2px solid #F1F1F1;
+}
